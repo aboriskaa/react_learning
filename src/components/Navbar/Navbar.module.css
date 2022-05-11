@@ -1,0 +1,62 @@
+nav {
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 0;
+    height: 40px;
+    background-color: orange;
+    box-shadow: 0 0 10px black;
+    margin-bottom: 5px;
+}
+
+nav>ul {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    list-style-type: none;
+    text-transform: uppercase;
+    /* border: 1px solid yellow; */
+}
+
+nav a:link {
+    text-decoration: none;
+
+    color: black;
+}
+
+nav a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    animation-name: hover_link;
+    animation-duration: 0.5s;
+}
+
+@keyframes hover_link {
+    0% {
+        color: black;
+    }
+
+    70% {
+        color: azure;
+        font-size: 1.2em;
+        transform: rotate(-12deg);
+    }
+
+    100% {
+        color: black;
+    }
+}
+
+nav a:active {
+    text-decoration: none;
+    color: black;
+}

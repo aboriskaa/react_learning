@@ -1,6 +1,7 @@
+import classes from './Profile.module.css';
 
 const Profile = () => {
-    return <div className='content'>
+    return <div className={classes.content}>
         <div>
             <img src='https://cameralabs.org/media/k2/items/cache/e7b2aa61373306f3d6ce9012612d185c_L.jpg' alt='prof' width='100%' height='100px' />
         </div>
