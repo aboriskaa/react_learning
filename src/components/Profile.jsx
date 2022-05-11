@@ -2,7 +2,7 @@
 const Profile = () => {
     return <div className='content'>
         <div>
-            <img src='https://cameralabs.org/media/k2/items/cache/e7b2aa61373306f3d6ce9012612d185c_L.jpg' alt='prof' width='100%' />
+            <img src='https://cameralabs.org/media/k2/items/cache/e7b2aa61373306f3d6ce9012612d185c_L.jpg' alt='prof' width='100%' height='100px' />
         </div>
         <div>
             AVA + Description

@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 160px;
+}
+
+.logo {
+    border: 1px solid yellow;
+}
+
+.logo>h1,
+h6 {
+    text-align: center;
+    color: azure;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 4px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 0;
+    height: 40px;
+    background-color: orange;
+    box-shadow: 0 0 10px black;
+    margin-bottom: 5px;
+}
+
+nav>ul {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    list-style-type: none;
+    border: 1px solid yellow;
+}
+
+nav a:link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+}
+
+nav a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    animation-name: hover_link;
+    animation-duration: 0.5s;
+}
+
+@keyframes hover_link {
+    0% {
+        color: black;
+    }
+
+    50% {
+        color: azure;
+        font-size: 1.2em;
+        transform: rotate(-9deg);
+    }
+
+    100% {
+        color: black;
+    }
+}
+
+nav a:active {
+    text-decoration: none;
+    color: black;
+}

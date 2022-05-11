@@ -1,32 +1,89 @@
-.app-wrapper {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  height: 160px;
+}
+
+/* 
+.logo {
+  border: 1px solid yellow;
+} 
+*/
+
+.logo {
+  text-align: center;
+  color: azure;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 4px;
+}
+
+nav {
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  top: 0;
+  height: 40px;
+  background-color: orange;
+  box-shadow: 0 0 10px black;
+  margin-bottom: 5px;
+}
+
+nav>ul {
   margin: 0 auto;
-  display: grid;
-  width: 1200px;
-
-  grid-template-areas:
-    "h h"
-    "n c";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
-  /* grid-gap: 10px; */
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  list-style-type: none;
+  /* border: 1px solid yellow; */
 }
 
-.header {
-  grid-area: h;
-  background-color: aquamarine;
+nav a:link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
 }
 
-.header img {
-  width: 50px;
+nav a:visited {
+  text-decoration: none;
+  color: black;
 }
 
-.nav {
-  grid-area: n;
-  background-color: rgb(15, 209, 144);
+nav a:hover {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  animation-name: hover_link;
+  animation-duration: 0.5s;
 }
 
-.content {
-  grid-area: c;
-  background-color: rgb(7, 130, 89);
+@keyframes hover_link {
+  0% {
+    color: black;
+  }
 
+  70% {
+    color: azure;
+    font-size: 1.2em;
+    transform: rotate(-12deg);
+  }
+
+  100% {
+    color: black;
+  }
+}
+
+nav a:active {
+  text-decoration: none;
+  color: black;
 }
