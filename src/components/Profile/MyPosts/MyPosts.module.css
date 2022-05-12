@@ -1,0 +1,75 @@
+.my_posts {
+    margin: auto;
+    margin-top: 50px;
+    width: 100%;
+    width: 60%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.conteiner_posts {
+
+    background: #FFA500;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.conteiner_posts textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+    resize: none;
+    font-size: 1.6em;
+}
+
+.conteiner_posts h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin: 0 15px 15px 0;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #385898;
+    background-color: #e7f3ff;
+    cursor: pointer;
+    user-select: none;
+    appearance: none;
+    touch-action: manipulation;
+}
+
+.btn:focus-visible {
+    box-shadow: 0 0 0 2px #666;
+}
+
+.btn:hover {
+    background-color: #DBE7F2;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn:disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}

@@ -1,20 +1,15 @@
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  height: 160px;
 }
 
-/* 
-  .logo {
-    border: 1px solid yellow;
-  } 
-  */
-
 .logo {
-    text-align: center;
-    color: azure;
-    font-family: 'Open Sans', sans-serif;
-    letter-spacing: 4px;
+  text-align: center;
+  color: azure;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 4px;
+  /* border: 1px solid yellow; */
 }
