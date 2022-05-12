@@ -1,15 +1,13 @@
-nav {
+.nav_ls {
     position: -webkit-sticky;
-    /* Safari */
     position: sticky;
     top: 0;
     height: 40px;
     background-color: orange;
     box-shadow: 0 0 10px black;
-    margin-bottom: 5px;
 }
 
-nav>ul {
+.nav_ls>ul {
     margin: 0 auto;
     width: 80%;
     display: flex;
@@ -21,42 +19,41 @@ nav>ul {
     /* border: 1px solid yellow; */
 }
 
-nav a:link {
-    text-decoration: none;
-
-    color: black;
-}
-
-nav a:visited {
-    text-decoration: none;
-    color: black;
-}
-
-nav a:hover {
+.nav_ls a {
     display: inline-block;
     text-decoration: none;
     color: black;
+}
+
+.nav_ls a:hover {
     animation-name: hover_link;
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
+}
+
+.nav_ls a.activeLink {
+    color: azure;
+    font-weight: bold;
 }
 
 @keyframes hover_link {
-    0% {
-        color: black;
-    }
-
     70% {
-        color: azure;
         font-size: 1.2em;
         transform: rotate(-12deg);
     }
-
-    100% {
-        color: black;
-    }
 }
 
-nav a:active {
-    text-decoration: none;
-    color: black;
+@media (min-width: 481px) and (max-width: 1199px) {}
+
+@media (max-width: 480px) {
+    .nav_sm>ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav_sm {
+        top: 0;
+        height: auto;
+        background-color: orange;
+        box-shadow: 0 0 10px black;
+    }
 }

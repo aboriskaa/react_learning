@@ -11,5 +11,12 @@ header {
   color: azure;
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 4px;
-  /* border: 1px solid yellow; */
+}
+
+
+@media (max-width: 480px) {
+  .logo {
+    width: 98%;
+    font-size: 12px;
+  }
 }
