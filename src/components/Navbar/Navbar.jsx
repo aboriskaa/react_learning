@@ -16,9 +16,7 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/dialogs' className={
-                        ({ isActive }) => isActive ? activeClassName : undefined
-                    }
+                    <NavLink to='/dialogs' className={({ isActive }) => isActive ? activeClassName : undefined}
                     >Messages
                     </NavLink>
                 </li>
