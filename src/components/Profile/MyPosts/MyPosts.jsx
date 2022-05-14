@@ -9,6 +9,8 @@ const MyPosts = () => {
         { id: 2, message: 'POST 2', likesCount: 102 }
     ]
 
+    let postsElement = postsData.map(p => <Post message={p.message} likesCount={p.likesCount} />);
+
     return (
         <div className={classes.my_posts}>
             <div className={classes.conteiner_posts}>
@@ -19,8 +21,7 @@ const MyPosts = () => {
                         <button className={classes.btn} type='button'>Click Me!</button>
                     </div>
                 </div>
-                <Post message={postsData[0].message} likesCount={postsData[0].likesCount} />
-                <Post message={postsData[1].message} likesCount={postsData[1].likesCount} />
+                {postsElement}
             </div>
         </div>
     );

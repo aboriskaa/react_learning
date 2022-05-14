@@ -23,6 +23,8 @@
     display: inline-block;
     text-decoration: none;
     color: black;
+    border: 1px solid yellow;
+    padding: 5px;
 }
 
 .nav_ls a:hover {
