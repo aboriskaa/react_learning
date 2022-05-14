@@ -7,20 +7,6 @@
     padding: 10px;
 }
 
-.dialog {
-    padding: 10px;
-}
-
 .messages {
     padding: 10px;
-}
-
-.message {
-    background-color: azure;
-    padding: 10px;
-}
-
-.active {
-    color: gold;
-    font-weight: bold;
 }

@@ -1,41 +1,46 @@
-.nav_ls {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    height: 40px;
-    background-color: orange;
-    box-shadow: 0 0 10px black;
+@media (min-width: 1200px) {
+    .nav_ls {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        height: 40px;
+        background-color: orange;
+        box-shadow: 0 0 10px black;
+    }
+
+    .nav_ls>ul {
+        margin: 0 auto;
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        list-style-type: none;
+        text-transform: uppercase;
+        /* border: 1px solid yellow; */
+    }
+
+    .nav_ls a {
+        display: inline-block;
+        text-decoration: none;
+        color: black;
+        border: 1px solid yellow;
+        padding: 5px;
+    }
+
+    .nav_ls a:hover {
+        animation-name: hover_link;
+        animation-duration: 0.3s;
+    }
+
+    .nav_ls a.activeLink {
+        color: azure;
+        font-weight: bold;
+    }
+
 }
 
-.nav_ls>ul {
-    margin: 0 auto;
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    list-style-type: none;
-    text-transform: uppercase;
-    /* border: 1px solid yellow; */
-}
 
-.nav_ls a {
-    display: inline-block;
-    text-decoration: none;
-    color: black;
-    border: 1px solid yellow;
-    padding: 5px;
-}
-
-.nav_ls a:hover {
-    animation-name: hover_link;
-    animation-duration: 0.3s;
-}
-
-.nav_ls a.activeLink {
-    color: azure;
-    font-weight: bold;
-}
 
 @keyframes hover_link {
     70% {
