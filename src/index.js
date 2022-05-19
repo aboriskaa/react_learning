@@ -3,32 +3,34 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import state from './redux/state';
 
-let postsData = [
-  { id: 1, message: 'POST 1', likesCount: 12 },
-  { id: 2, message: 'POST 2', likesCount: 102 }
-]
-let dialogsData = [
-  { id: 1, name: 'Dimych' },
-  { id: 2, name: 'Andrew' },
-  { id: 3, name: 'Sveta' },
-  { id: 4, name: 'Sasha' },
-  { id: 5, name: 'Viktor' },
-  { id: 6, name: 'Valera' },
-  { id: 7, name: 'Gul' }
-]
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-let messagesData = [
-  { id: 1, message: '1 Lorem ipsum dolor sit amet.' },
-  { id: 2, message: '2 Lorem, ipsum dolor sit amet consectetur adipisicing.' },
-  { id: 3, message: '3 Lorem, ipsum dolor.' },
-  { id: 4, message: '4 Lorem ipsum dolor sit amet consectetur.' }
-]
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBSJOAm1_xpePRYH1MkDMvvkoDLgF8LQpE",
+  authDomain: "project1-94727.firebaseapp.com",
+  projectId: "project1-94727",
+  storageBucket: "project1-94727.appspot.com",
+  messagingSenderId: "1033772386214",
+  appId: "1:1033772386214:web:c348f4659a7b7ae233b167",
+  measurementId: "G-DBW3TNTJZX"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App postsData={postsData} messagesData={messagesData} dialogsData={dialogsData} />
+    <App state={state} />
   </React.StrictMode>
 );
 
