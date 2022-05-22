@@ -1,7 +1,32 @@
 import './index.css';
 // import reportWebVitals from './reportWebVitals';
-import state from './redux/state';
-import { rerenderEntireTree } from './render';
+import state, { subscribe } from './redux/state';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import { addPost, updateNewPostText } from './redux/state';
+import { BrowserRouter } from 'react-router-dom';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+let rerenderEntireTree = (state) => {
+
+    root.render(
+        <React.StrictMode>
+            <BrowserRouter >
+                <App
+                    state={state}
+                    addPost={addPost}
+                    updateNewPostText={updateNewPostText}
+                />
+            </BrowserRouter >
+        </React.StrictMode>
+    );
+}
+
+rerenderEntireTree(state);
+
+subscribe(rerenderEntireTree);
 // Import the functions you need from the SDKs you need
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
@@ -26,7 +51,7 @@ import { rerenderEntireTree } from './render';
 
 
 
-rerenderEntireTree(state);
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
