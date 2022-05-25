@@ -11,7 +11,9 @@ import './App.css';
 const App = (props) => {
   return <><Header /><Navbar /><div className='wrapper_bg_img'>
     <Routes>
-      <Route path="/dialogs" element={<Dialogs state={props.state.messagesPage} />} />
+      <Route path="/dialogs" element={<Dialogs
+        store={props.store}
+      />} />
       <Route path="/profile" element={<Profile
         profilePage={props.state.profilePage}
         dispatch={props.dispatch}

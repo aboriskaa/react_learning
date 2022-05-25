@@ -5,9 +5,7 @@ import { updateNewPostTextActionCreator, addPostActionCreator } from '../../../r
 
 const MyPosts = (props) => {
 
-
     let postsElement = props.postsData.map(p => <Post message={p.message} likesCount={p.likesCount} />);
-
 
     let newPostElement = React.createRef();
 
@@ -21,7 +19,6 @@ const MyPosts = (props) => {
         props.dispatch(updateNewPostTextActionCreator(text));
         //props.updateNewPostText(text);
     }
-
 
     return (
         <div className={classes.my_posts}>
