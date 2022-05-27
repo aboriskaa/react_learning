@@ -5,31 +5,20 @@ import ReactDOM from 'react-dom/client';
 import store from './redux/redux-store';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import StoreContext, { Provider } from './StoreContext';
+import { Provider } from 'react-redux';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let rerenderEntireTree = () => {
-
-    root.render(
-        <React.StrictMode>
-            <BrowserRouter >
-                <Provider store={store}>
-                    <App />
-                </Provider>
-            </BrowserRouter >
-        </React.StrictMode>
-    );
-}
-
-rerenderEntireTree();
-
-store.subscribe(() => {
-    let state = store.getState();
-    rerenderEntireTree(state);
-});
-
+root.render(
+    <React.StrictMode>
+        <BrowserRouter >
+            <Provider store={store}>
+                <App />
+            </Provider>
+        </BrowserRouter >
+    </React.StrictMode>
+)
 
 // Import the functions you need from the SDKs you need
 // import { initializeApp } from "firebase/app";
