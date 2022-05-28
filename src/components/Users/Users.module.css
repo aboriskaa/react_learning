@@ -1,0 +1,15 @@
+.usersBody {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.usersBodyList {
+    margin: 10px auto;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.photo {
+    width: 300px;
+    border: 1px solid rgb(0, 0, 0);
+}

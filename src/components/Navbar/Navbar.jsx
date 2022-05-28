@@ -27,7 +27,7 @@ const Navbar = () => {
                     <NavLink to='/music' activeClassName={classes.activeLink}>Music</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/settings' activeClassName={classes.activeLink}>Settings</NavLink>
+                    <NavLink to='/users' activeClassName={classes.activeLink}>Settings</NavLink>
                 </li>
             </ul>
         </nav >
