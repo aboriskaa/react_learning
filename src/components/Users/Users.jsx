@@ -5,13 +5,13 @@ import userPhoto from '../../assets/images/user_img.png'
 
 
 class Users extends React.Component {
-    constructor(props) {
-        super(props);
-        alert('New object');
+
+    componentDidMount() {
         axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
             this.props.setUsers(response.data.items);
         })
     }
+
     render() {
         return <div className={classes.usersBody}>
             {
