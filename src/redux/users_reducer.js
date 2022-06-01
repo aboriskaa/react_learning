@@ -33,7 +33,7 @@ export const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: [
-                    // ...state.users,
+                    ...state.users,
                     ...action.users
                 ]
 
