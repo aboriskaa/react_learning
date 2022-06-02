@@ -9,7 +9,7 @@ import './App.css';
 import UsersContainer from './components/Users/UsersContainer';
 
 
-const App = (props) => {
+const App = () => {
   return <>
     <Header />
     <Navbar />

@@ -9,7 +9,7 @@
 .wrapper_bg_img {
   margin: auto;
   height: 100%;
-  background: linear-gradient(217deg, rgba(212, 212, 212, 1), rgba(255, 255, 255, 1) 70.71%);
+  /* background: linear-gradient(217deg, rgba(212, 212, 212, 1), rgba(255, 255, 255, 1) 70.71%); */
   padding-top: 50px;
   padding-bottom: 50px;
 }
