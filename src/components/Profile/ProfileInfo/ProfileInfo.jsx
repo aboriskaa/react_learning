@@ -1,12 +1,23 @@
 import React from 'react';
 import classes from './ProfileInfo.module.css';
+import Preloader from '../../common/Preloader/Preloader';
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+    if (!props.profile) {
+        return <Preloader />
+    }
     return (
         <div className={classes.my_profile}>
-            <div className={classes.ava}></div>
+            <div className={props.profile.photos.large === null ? classes.ava : classes.isAva}>
+                <img className={classes.avatar} src={props.profile.photos.large} alt="" />
+            </div>
             <div className={classes.desc}>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam culpa quia quas mollitia, ipsam maxime. Error accusamus, modi culpa mollitia, alias tempora tenetur adipisci repudiandae obcaecati nostrum quos ratione eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas, magnam sint magni hic vel assumenda dolorum porro autem dolores. Aspernatur quos cupiditate, voluptatibus fuga voluptate natus eaque inventore quod?</p>
+                <p>ИМЯ: {props.profile.fullName}</p>
+                <p>РАБОЧИЙ СТАТУС: {props.profile.lookingForAJob ? "В поиске работы" : "Не нуждаюсь в работе"}</p>
+                <p>ПОЖЕЛАНИЯ К РАБОТЕ: {props.profile.lookingForAJobDescription}</p>
+            </div>
+            <div className={classes.desc2}>
+                <p>BIO: {props.profile.aboutMe}</p>
             </div>
         </div>
     );
