@@ -1,19 +1,77 @@
 .usersBody {
     display: flex;
     flex-direction: column;
-    border: 1px solid rgb(0, 0, 0);
+    /* border: 1px solid rgb(0, 0, 0); */
+    gap: 1px;
 }
 
 .usersBodyList {
     margin: 10px auto;
-    border: 1px solid rgb(0, 0, 0);
+    display: table;
+    /* margin-bottom: 10px; */
+    /*размер рамки */
+    padding: 1px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
 }
 
 .photo {
     width: 300px;
-    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    /* border: 1px solid rgb(0, 0, 0); */
 }
 
 .selectedPage {
     font-weight: bold;
+}
+
+
+.usersBodyListiN {
+    background: #FFA500;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 10px;
+    word-break: break-all;
+    /*размер рамки */
+
+}
+
+.btn {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin: 0 15px 15px 0;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000000;
+    background-color: #e7f3ff;
+    cursor: pointer;
+    user-select: none;
+    appearance: none;
+    touch-action: manipulation;
+    margin-top: 10px;
+}
+
+.btn:focus-visible {
+    box-shadow: 0 0 0 2px #666;
+}
+
+.btn:hover {
+    background-color: #DBE7F2;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn:disabled {
+    pointer-events: none;
+    opacity: 0.65;
 }

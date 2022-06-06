@@ -1,23 +1,23 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 7fr 3fr;
-    gap: 10px;
+    gap: 5px;
 }
 
 .my_posts {
     margin: auto;
     width: 90%;
-    padding: 4px;
     /*размер рамки */
+    padding: 1px;
     background: rgba(0, 0, 0, 0.8);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .conteiner_posts {
     background: #FFA500;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px;
     /*размер рамки */
 
@@ -26,10 +26,11 @@
 .conteiner_posts textarea {
     border: none;
     overflow: auto;
+
     outline: none;
     padding: 10px;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px #999;
     resize: none;
@@ -37,6 +38,7 @@
 }
 
 .conteiner_posts h2 {
+
     text-align: center;
     margin-bottom: 10px;
 }
@@ -48,7 +50,7 @@
     margin: 0 15px 15px 0;
     outline: none;
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     height: 40px;
     line-height: 40px;
     font-size: 17px;
