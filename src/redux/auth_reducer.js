@@ -4,7 +4,7 @@ let initialState = {
     userId: null,
     email: null,
     login: null,
-    isAuth: false
+    isAuth: null,
 }
 
 export const authReducer = (state = initialState, action) => {
