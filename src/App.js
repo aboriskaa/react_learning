@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import DialogsConteiner from './components/Dialogs/DialogsConteiner';
@@ -7,11 +6,12 @@ import Footer from './components/Footer/Footer';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import UsersContainer from './components/Users/UsersContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 
 const App = () => {
   return <>
-    <Header />
+    <HeaderContainer />
     <Navbar />
     <div className='wrapper_bg_img'>
       <Routes>

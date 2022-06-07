@@ -13,6 +13,11 @@ header {
   letter-spacing: 4px;
 }
 
+.loginBlock {
+  float: right;
+  color: white;
+  text-align: right;
+}
 
 @media (max-width: 480px) {
   .logo {
