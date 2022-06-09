@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import classes from './Navbar.module.css';
+import styles from './Navbar.module.css';
 
 
-let activeClassName = classes.activeLink;
+let activeClassName = styles.activeLink;
 
 const Navbar = () => {
     return (
-        <nav className={classes.nav_ls + " " + classes.nav_sm}>
+        <nav className={styles.nav_ls + " " + styles.nav_sm}>
             <ul>
                 <li>
                     <NavLink to='/profile'
@@ -21,16 +21,16 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/news' activeClassName={classes.activeLink}>News</NavLink>
+                    <NavLink to='/news' activeClassName={styles.activeLink}>News</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/music' activeClassName={classes.activeLink}>Music</NavLink>
+                    <NavLink to='/music' activeClassName={styles.activeLink}>Music</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/users' activeClassName={classes.activeLink}>Users</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? activeClassName : undefined} to='/users' activeClassName={styles.activeLink}>Users</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/settings' activeClassName={classes.activeLink}>Settings</NavLink>
+                    <NavLink to='/settings' activeClassName={styles.activeLink}>Settings</NavLink>
                 </li>
             </ul>
         </nav >
