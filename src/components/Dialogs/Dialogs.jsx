@@ -1,4 +1,5 @@
 import React from 'react';
+import { Formik, Form, Field } from "formik";
 import classes from './Dialogs.module.css';
 import DialogItems from './DialogItems/DialogItems';
 import Message from './Message/Message';
@@ -11,18 +12,6 @@ const Dialogs = (props) => {
 
     let dialogsElements = state.dialogsData.map(d => <DialogItems name={d.name} key={d.id} id={d.id} />);
     let messagesElements = state.dialogsPage.map(m => <Message message={m.message} key={m.id} />);
-    let newMessageBody = state.newMessageBody;
-
-    let onSendMessageClick = () => {
-        props.sendMessage();
-    }
-
-    let onNewMessageChange = (e) => {
-        let body = e.target.value;
-        props.updateNewMessageBody(body);
-    }
-
-    // if (!props.isAuth) return <Navigate to="/login" /> //replace={true} 
 
     return (
         <div className={classes.dialogs}>
@@ -39,21 +28,45 @@ const Dialogs = (props) => {
             <div>
                 <div className={classes.my_posts}>
                     <div className={classes.conteiner_posts}>
-                        <div>
-                            <textarea value={newMessageBody}
-                                onChange={onNewMessageChange}
-                                placeholder='Enter your message'>
-                            </textarea>
-                        </div>
-                        <div>
-                            <button onClick={onSendMessageClick} className={classes.btn}>Send</button>
-                        </div>
+                        <AddMessageForm sendMessage={props.sendMessage} />
                     </div>
                 </div>
             </div>
         </div>
     );
 
+}
+const AddMessageForm = (props) => {
+
+    let addNewMessage = (values) => { props.sendMessage(values) }
+
+    return (
+        <Formik
+            initialValues={{
+                newMessageBody: ""
+            }}
+            onSubmit={(values, { resetForm }) => {
+                addNewMessage(values.newMessageBody);
+                resetForm({ values: '' });
+            }
+            }
+        >
+            {() => (
+                <Form>
+                    <div>
+                        <Field
+                            name={'newMessageBody'}
+                            as={'textarea'}
+                            placeholder={'Enter text...'}
+                        />
+                    </div>
+                    <div>
+                        <button type={'submit'} className={classes.btn}>Send</button>
+                    </div>
+                </Form>
+            )}
+        </Formik>
+    )
 }
 
 export default Dialogs;
