@@ -4,6 +4,10 @@ import { NavLink } from 'react-router-dom';
 
 const Header = (props) => {
 
+    // localLogout {
+
+    // }
+
     return (
         <header className={style.header}>
             <div className={style.logo}>
@@ -13,16 +17,20 @@ const Header = (props) => {
             </div>
 
             <div className={style.loginBlock}>
-                {props.isAuth ? props.login : <NavLink to='/login' >LOGIN:</NavLink>}
+                {props.isAuth
+                    ? <div>{props.login} - <button onClick={props.logout}>logout</button></div>
+                    : <NavLink to='/login' >LOGIN</NavLink>
+                }
             </div>
 
 
-            {/* <NavLink to='/profile' className={({ isActive }) => isActive ? activeClassName : undefined}
-                    >Profile
-                    </NavLink> */}
+
         </header>
     );
 }
 
 export default Header;
 
+/* <NavLink to='/profile' className={({ isActive }) => isActive ? activeClassName : undefined}
+            >Profile
+            </NavLink> */

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { connect } from 'react-redux';
+import { login } from '../../redux/auth_reducer'
+import { Navigate } from "react-router-dom";
 
 
 const validateLoginForm = values => {
@@ -18,13 +21,17 @@ const validateLoginForm = values => {
 const validationSchemaLoginForm = Yup.object().shape({
 
     password: Yup.string()
-        .min(2, "Must be longer than 2 characters")
-        .max(5, "Must be shorter than 5 characters")
+        .min(4, "Must be longer than 2 characters")
+        .max(9, "Must be shorter than 5 characters")
         .required("Required 2")
 });
 
 
-const Login = () => {
+const Login = (props) => {
+
+    if (props.isAuth) {
+        return <Navigate to="/profile" />
+    }
 
     return (
         <div>
@@ -40,11 +47,11 @@ const Login = () => {
                 validationSchema={validationSchemaLoginForm}
 
                 onSubmit={(values, { setSubmitting }) => {
-                    setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        setSubmitting(false);
-                    }, 400);
-                    console.log(values)
+                    // setTimeout(() => {
+                    //     alert(JSON.stringify(values, null, 2));
+                    // }, 400);
+                    setSubmitting(false);
+                    props.login(values.email, values.password, values.rememberMe)
                 }}>
 
                 {() => (
@@ -53,7 +60,7 @@ const Login = () => {
                             <Field
                                 name={'email'}
                                 type={'text'}
-                                placeholder={'e-mail'} />
+                                placeholder={'E-mail'} />
                         </div>
                         <ErrorMessage name="email" component="div" />
 
@@ -85,5 +92,7 @@ const Login = () => {
         </div >
     )
 }
-
-export default Login;
+const mapStateToProps = (state) => ({
+    isAuth: state.auth.isAuth
+})
+export default connect(mapStateToProps, { login })(Login);

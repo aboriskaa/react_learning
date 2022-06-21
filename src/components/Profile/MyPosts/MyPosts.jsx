@@ -33,19 +33,27 @@ const AddNewMessagePost = (props) => {
 
     let addNewPost = (values) => { props.addPost(values) }
 
-
     return (
         <Formik
             initialValues={{
                 newPostBody: ""
             }}
-            onSubmit={(values, { resetForm }) => {
+            onSubmit={(values, { resetForm, setSubmitting }) => {
                 addNewPost(values.newPostBody);
                 resetForm({ values: '' });
+
+                setTimeout(() => {
+                    alert(JSON.stringify(values, null, 2));
+                    setSubmitting(false);
+                }, 400);
+
             }
             }
         >
-            {() => (
+            {({
+                isSubmitting
+                /* and other goodies */
+            }) => (
                 <Form>
                     <Field
                         name={'newPostBody'}
@@ -53,7 +61,7 @@ const AddNewMessagePost = (props) => {
                         placeholder={'Enter text...'}
                     />
                     <div>
-                        <button className={classes.btn} type='submit'>Click Me!</button>
+                        <button className={classes.btn} type='submit' disabled={isSubmitting}>Click Me!</button>
                     </div>
                 </Form>
             )}

@@ -3,6 +3,7 @@ import { Formik, Form, Field } from "formik";
 import classes from './Dialogs.module.css';
 import DialogItems from './DialogItems/DialogItems';
 import Message from './Message/Message';
+import * as Yup from "yup";
 
 
 
