@@ -54,7 +54,7 @@ const Login = (props) => {
                     props.login(values.email, values.password, values.rememberMe)
                 }}>
 
-                {() => (
+                {({ isSubmitting }) => (
                     <Form>
                         <div>
                             <Field
@@ -80,7 +80,7 @@ const Login = (props) => {
                             <label htmlFor={'rememberMe'}> remember me </label>
                         </div>
 
-                        <button type={'submit'}>Login</button>
+                        <button type={'submit'} disabled={isSubmitting}>Login</button>
                     </Form>
                 )}
             </Formik>
