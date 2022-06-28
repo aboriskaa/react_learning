@@ -62,13 +62,13 @@ export const usersReducer = (state = initialState, action) => {
 }
 
 
-export const getUsers = (currentPage, pageSize) => {  // Thunk Creator 
+export const requestUsers = (currentPage, pageSize) => {  // Thunk Creator 
 
     return (dispatch) => {
 
         dispatch(toggleIsFetching(true));
 
-        usersAPI.getUsers(currentPage, pageSize).then(data => {
+        usersAPI.requestUsers(currentPage, pageSize).then(data => {
             dispatch(setCurrentPage(currentPage));
             dispatch(toggleIsFetching(false));
             dispatch(setUsers(data.items));
