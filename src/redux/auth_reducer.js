@@ -36,12 +36,11 @@ export const getAuthUserData = () => (dispatch) => {
 }
 
 export const login = (email, password, remeberMe) => (dispatch) => {
-    authAPI.login(email, password, remeberMe)
+    return authAPI.login(email, password, remeberMe)
         .then(response => {
             if (response.data.resultCode === 0) {
                 dispatch(getAuthUserData())
             }
-            // debugger;
         })
 }
 

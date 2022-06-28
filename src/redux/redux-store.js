@@ -7,6 +7,7 @@ import { messageReducer } from "./messages_reducer";
 import { sidebarReducer } from "./sidebar_reducer";
 import { usersReducer } from './users_reducer';
 import { authReducer } from './auth_reducer';
+import { appReducer } from './app_reducer';
 
 
 let store = configureStore({
@@ -15,7 +16,8 @@ let store = configureStore({
         messagesPage: messageReducer,
         sidebar: sidebarReducer,
         usersPage: usersReducer,
-        auth: authReducer
+        auth: authReducer,
+        app: appReducer
     }
 },
     applyMiddleware(thunk)
