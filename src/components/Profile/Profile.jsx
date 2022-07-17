@@ -4,11 +4,11 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 import classes from './Profile.module.css';
 
 
-const Profile = (props) => {
+const Profile = ({ profile, updateStatus, status }) => {
 
     return (
         <div className={classes.content}>
-            <ProfileInfo profile={props.profile} status={props.status} updateStatus={props.updateStatus} />
+            <ProfileInfo profile={profile} status={status} updateStatus={updateStatus} />
             <MyPostsConteiner />
         </div>
     );
